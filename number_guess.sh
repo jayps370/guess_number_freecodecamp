@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PSQL="psql -X --username=freecodecamp --dbname=number_guess -t -c"
+PSQL="psql -X --username=freecodecamp --dbname=number_guess --tuples-only -c"
 echo -e "\n~~~~~ Welcome to number guessing game ~~~~~\n"
 
 GAME_START(){
@@ -32,7 +32,6 @@ GUESSING(){
 
   # Generate random number form 1-1000
   RANDOM_NUM=$(($RANDOM%1000+1))
-  echo $RANDOM_NUM
   
   # Get user guess
   echo "Guess the secret number between 1 and 1000:"
